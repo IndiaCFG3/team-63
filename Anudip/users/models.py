@@ -41,9 +41,19 @@ class Task(models.Model):
 
 class Task_to_Mob(models.Model):
 
-	select_task = models.OneToOneField(User, on_delete = models.CASCADE)
+	select_task = models.OneToOneField(Task, on_delete = models.CASCADE)
 
 	interested_mobilizers = models.ManyToManyField(User, blank = True, related_name = "+")
 
 	def __str__(self):
 		return f'{self.select_task.id} Mapping'
+
+class Submission(models.Model):
+
+	task_selected_by_mob = models.ForeignKey(Task,on_delete = models.CASCADE)
+
+	mobilizer_submitted = models.ForeignKey(User, on_delete = models.CASCADE)
+
+	answer = models.CharField(max_length = 1500)
+
+	completed_status = models.IntegerField(default = 0)
