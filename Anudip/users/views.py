@@ -66,7 +66,7 @@ def formR(request):
         "form":form
     }
 
-    return render(request, "users/register.html")
+    return render(request, "users/signup.html")
 
 @login_required
 def custom_logout(request):
@@ -82,3 +82,6 @@ def home(request):
 def login(request):
 
 	return render(request, "users/login.html")
+
+def signup(request):
+    return render(request, "users/signup.html")
