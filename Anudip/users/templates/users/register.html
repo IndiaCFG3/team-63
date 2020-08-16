@@ -1,0 +1,14 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="{% url 'register' %}" method = "post">
+            {% csrf_token %}
+        	{{ form|crispy }}
+        </form>
+    </body>
+</html>

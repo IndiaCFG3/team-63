@@ -22,6 +22,7 @@ class LoginForm(UserCreationForm):
     def save(self, commit=True):
         user = super(LoginForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
+
         if commit:
             user.save()
         return user
