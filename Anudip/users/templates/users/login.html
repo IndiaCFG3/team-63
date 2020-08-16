@@ -1,0 +1,12 @@
+{% load static %}
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="{% url 'login_request' %}" method = "post">
+            {% csrf_token %}
+        
+        </form>
+    </body>
+</html>
