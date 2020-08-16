@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<html>
+
+<head>
+
+	<title> Your Mobilizers </title>	
+
+	</head>
+
+	<body>
+
+		{% for mobilizer in all_mobilizers %}
+
+			<h2> {{ mobilizer.username }} </h2>
+
+			<br> <br>
+
+		{% endfor %}
+
+	</body>
+
+
+</html>

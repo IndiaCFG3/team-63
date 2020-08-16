@@ -1,5 +1,4 @@
 # https://github.com/IndiaCFG3/team-63
-
 from django.shortcuts import render
 import os
 import json
@@ -82,3 +81,43 @@ def home(request):
 def login(request):
 
 	return render(request, "users/login.html")
+
+def show_mobilizers_under_me(request):
+
+    loggedin_user = request.user
+
+    loggedin_user = Application_User.objects.get(user = loggedin_user)
+
+    all_mobilizers = None
+
+    if loggedin_user.type_of_user == 'Manager' :
+
+        loggedin_user = request.user
+
+        all_mobilizers = Manager_to_Mob.objects.get(manager = loggedin_user).all_mobilizers.all()
+
+    return render(request, "users/show_mobilizers_under_me.html", {"all_mobilizers" : all_mobilizers})
+
+
+
+class login_api(APIView):
+
+    def post(self, request):
+
+        username = request.data["username"]
+        password = request.data["password"]
+
+        find_user = authenticate(username=username,password=password)
+
+        if find_user is None : 
+            messages.error(request, "Invalid Credentials !")
+            return redirect("custom_login")
+
+        else :
+
+            login(request,find_user)
+            return redirect("main-hello")
+
+    def get(self, request):
+
+        return render(request, "users/login.html")

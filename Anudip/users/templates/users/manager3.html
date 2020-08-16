@@ -1,7 +1,3 @@
-{% load crispy_forms_tags %}
-{% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,25 +10,25 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'users/img/hands.jpg' %}" rel="apple-touch-icon">
+  <link href="assets/img/hands.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{% static 'users/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Template Main CSS File -->
-  <link href="{% static 'users/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -65,18 +61,60 @@
                     <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
                 </fieldset>-->
               
-            <br><br><br>  
+          <br><br><br>  
             
-           <h1 style="margin-left: 15%">TASK TO BE SELECTED</h1>
-            
+           <h1 style="margin-left: 15%">VIEW PROGRESS</h1>
+           <h3>Mobilizer : Jiten</h3>
             <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
             <div class="row">
-            <h1 style="margin-left: 15%">TASK 1  BLOOD DONATION CAMP</h1>
+                <div class="col-6">
+                    Task ID : 1
+                </div>
+                <div class="col-6">
+                    Task Name : Blood Donation Camp
+                </div>
+            </div>
             <br>
-            <form action="{% url 'patientq' %}"  method="POST">
-              
-                <button name="subject" type="submit" value="{{ s.Problem }}">SELECT TASK</button>
-            </form>
+            <div class="row">
+                <div class="col-6">
+                    Progress :  Not Availabe
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Reasons : Due to continuous rain, Fllod in my area. Will reach the Camp by tomorrow.
+                </div>
+            </div>
+            <br>
+            </div>
+
+            <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col-6">
+                    Task ID : 2
+                </div>
+                <div class="col-6">
+                    Task Name : NGO Funds
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Progress: Completed
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                   SubTasks: Raised Rs.25000
+                             Approached all nearby shops
+                             Got more funds as Products which will be handed soon
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+            <br>
             </div>
     <br>
     <br>

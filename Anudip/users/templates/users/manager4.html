@@ -1,7 +1,3 @@
-{% load crispy_forms_tags %}
-{% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,25 +10,25 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'users/img/hands.jpg' %}" rel="apple-touch-icon">
+  <link href="assets/img/hands.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{% static 'users/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'users/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Template Main CSS File -->
-  <link href="{% static 'users/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -64,22 +60,36 @@
                     <label for="userID">UserID</label>
                     <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
                 </fieldset>-->
-              
-            <br><br><br>  
-            
-           <h1 style="margin-left: 15%">TASK TO BE SELECTED</h1>
-            
-            <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
-            <div class="row">
-            <h1 style="margin-left: 15%">TASK 1  BLOOD DONATION CAMP</h1>
+    <br><br><br>          
+    <h1 style="margin-left: 15%">ADD MOBILIZER</h1>
             <br>
-            <form action="{% url 'patientq' %}"  method="POST">
-              
-                <button name="subject" type="submit" value="{{ s.Problem }}">SELECT TASK</button>
-            </form>
+    <div class="container">
+    <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+        <form action="{% url 'patienta' %}" method="POST">   
+            
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control form-rounded" id="Name" placeholder="Name" name="Name">
             </div>
+            
+            <div class="form-group">
+                <label for="Hospital">Email</label>
+                <input type="text" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
+            </div>
+
+            <div class="form-group">
+                <label for="Phone number">Password</label>
+                <input type="text" class="form-control form-rounded" id="Phone number" placeholder="Phone number" name="Phone">
+            </div>
+                     
+            <button type="submit" id="submitForm">ADD TO DATABASE</button>
+          </form>
+          </div>
+    </div>
+</div>
     <br>
     <br>
+</div>
 
 </div></div>
 </body>

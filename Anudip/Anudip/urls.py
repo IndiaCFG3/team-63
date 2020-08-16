@@ -23,5 +23,6 @@ urlpatterns = [
     path('signup/', users_views.register, name='register'),
     path('signin/', users_views.login_request, name='login_request'),
     path('logout/', users_views.custom_logout, name = 'logout'),
-    path('login/', users_views.login, name = 'login')
+    path('login/', users_views.login_api.as_view(), name = 'login'),
+    path('show_mobilizers_under_me', users_views.show_mobilizers_under_me, name = 'show_mobilizers_under_me')
 ]
