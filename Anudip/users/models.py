@@ -29,3 +29,21 @@ class Manager_to_Mob(models.Model):
 
 	def __str__(self):
 		return f'{self.manager.username} Mapping'
+
+class Task(models.Model):
+
+	taskcreator = models.ForeignKey(User, on_delete=models.CASCADE)
+	taskname = models.CharField(max_length=128)
+	description = models.CharField(max_length=300)
+	fromduration = models.DateField()
+	toduration = models.DateField()
+	maxnumber = models.IntegerField()
+
+class Task_to_Mob(models.Model):
+
+	select_task = models.OneToOneField(User, on_delete = models.CASCADE)
+
+	interested_mobilizers = models.ManyToManyField(User, blank = True, related_name = "+")
+
+	def __str__(self):
+		return f'{self.select_task.id} Mapping'
