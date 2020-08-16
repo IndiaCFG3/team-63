@@ -20,3 +20,12 @@ class Application_User(models.Model):
 
 	def __str__(self):
 		return f'{self.user.username} Application User'
+
+class Manager_to_Mob(models.Model):
+
+	manager = models.ForeignKey(User, on_delete=models.CASCADE)
+
+	all_mobilizers = models.ManyToManyField(User, blank=True, related_name = "+")
+
+	def __str__(self):
+		return f'{self.manager.username} Mapping'
