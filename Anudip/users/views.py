@@ -164,3 +164,14 @@ def show_all_tasks(request):
     }
 
     return render(request,"users/all_tasks.html",context_dict)
+
+def add_mobilizer(request):
+
+    return render(request, "users/manager4.html")
+
+def view_progress(request):
+
+    return render(request, "users/manager3.html")
+
+def manager4(request):
+    return render(request, "users/manager4.html")

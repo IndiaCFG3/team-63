@@ -27,6 +27,7 @@ urlpatterns = [
     path('show_mobilizers_under_me', users_views.show_mobilizers_under_me, name = 'show_mobilizers_under_me'),
     path('create_task/', users_views.create_task.as_view(), name = 'create_task'),
     path('create_task_manager/', users_views.create_task_manager, name = 'create_task_manager'),
-    path('show_all_tasks/', users_views.show_all_tasks, name = 'show_all_tasks')
-
-]
+    path('show_all_tasks/', users_views.show_all_tasks, name = 'show_all_tasks'),
+    path('view_progress/', users_views.view_progress, name = 'view_progress'),
+    path('add_mobilizer/', users_views.add_mobilizer, name = 'add_mobilizer'),
+    path('manager4/',users_views.manager4,name='manager-4')]
