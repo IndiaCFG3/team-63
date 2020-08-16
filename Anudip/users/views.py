@@ -66,7 +66,7 @@ def formR(request):
         "form":form
     }
 
-    return render(request, "users/register.html")
+    return render(request, "users/signup.html")
 
 @login_required
 def custom_logout(request):
@@ -150,3 +150,6 @@ class create_task(APIView):
         messages.success(request, "Task Added!")
 
         return redirect("create_task_manager")
+
+def signup(request):
+    return render(request, "users/signup.html")
