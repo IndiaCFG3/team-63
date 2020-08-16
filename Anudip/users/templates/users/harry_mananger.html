@@ -32,6 +32,9 @@
 
 </head>
 
+<body>
+
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
@@ -40,23 +43,15 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <!-- <li><a class="navbar-brand mr-auto" href=""><img src="C:\Users\Sneha Reddy\Desktop\anudip.jpg" height="20" width="61"></a></li> -->
-          <li><a href="{% url 'create_task_manager' %}">Add Task</a></li>
-          <li><a href="{% url 'show_all_tasks' %}">All Tasks </a></li>
-          <li><a href="#">Add Mobilizer</a></li>
-          <li><a href="#">View Progress</a></li>       
-         </ul>
+          <li><a href="{% url 'manager1' %}">Add Task</a></li>
+          <li><a href="{% url 'manager2' %}">Add Task Details</a></li>
+          <li><a href="{% url 'manager4' %}">Add Mobilizer</a></li>
+          <li><a href="{% url 'manager3' %}">View Progress</a></li>
+        </ul>
       </nav><!-- .nav-menu -->
     </div>
   </header>
-
-<body>
-
-<a class="btn btn-primary text-right" href = "{% url 'create_task_manager' %}"> Create New Task </a>
-
-  <!-- ======= Header ======= -->
-
   <br>
-
     <div class="container">
     <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
         
@@ -66,66 +61,45 @@
                     <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
                 </fieldset>-->
     <br><br><br>          
-
-
- {% for message in messages %}
-
-                  <div class="alert alert-success">
-                      <a class="close" href="#" data-dismiss="alert">×</a>
-
-                      {{ message }}
-
-                  </div>
-          {% endfor %}
-
-
-<br>
-<br>
-<br>
-
-{% for task in all_tasks%}
-
+    <h1 style="margin-left: 15%">Add Task Details</h1>
+            <br>
     <div class="container">
     <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
-           
+        <form action="{% url 'manager1' %}" method="POST">   
+            
             <div class="form-group">
-                <label for="Hospital">Task Creator </label>
-                <p type="text" class="form-control form-rounded" value = {{task.taskcreator.username}} name="taskname" required disabled> {{task.taskcreator.username}} </p>
+                <label for="Name">Task ID</label>
+                <input type="text" class="form-control form-rounded" id="Name" placeholder="Name" name="Name">
             </div>
-
-             <div class="form-group">
+            
+            <div class="form-group">
                 <label for="Hospital">Task Name</label>
-                <p type="text" class="form-control form-rounded" value = {{task.taskname}} name="taskname" required disabled> {{task.taskname}}  </p> 
+                <input type="text" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
+            </div>
 
             <div class="form-group">
                 <label for="Phone number">Task Description</label>
-                <p type="text" class="form-control form-rounded" value = {{task.description}} placeholder="Description" name="description" required disabled> {{task.description}}  </p>
+                <input type="text" class="form-control form-rounded" id="Phone number" placeholder="Phone number" name="Phone">
             </div>
 
             <div class="form-group">
                 <label for="Hospital">From Date</label>
-                <p type="date" class="form-control form-rounded" value = {{task.fromduration}}  placeholder="Start Date" name="fromduration" required disabled>  {{task.fromduration}} </p>
+                <input type="date" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
             </div>
 
             <div class="form-group">
                 <label for="Hospital">To Date</label>
-                <p type="date" class="form-control form-rounded" value =  {{task.toduration}} placeholder="End Date" name="toduration" required disabled>   {{task.toduration}}  </p>
+                <input type="date" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
             </div>
-                
-            <div class="form-group">
-                <label for="Max No of Mobilizers">Max Mobilizers</label>
-                <p type="number" class="form-control form-rounded" value =  {{task.maxnumber}}  placeholder="Max No of Mobilizers" name="maxnumber" required disabled>  {{task.maxnumber}} </p>
-            </div>
-
+                     
+            <button type="submit" id="submitForm">Add details</button>
+          </form>
           </div>
     </div>
 </div>
     <br>
     <br>
 </div>
-
-
-{% endfor %}
 
 </div></div>
 </body>
