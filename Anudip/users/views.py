@@ -153,3 +153,14 @@ class create_task(APIView):
 
 def signup(request):
     return render(request, "users/signup.html")
+
+
+def show_all_tasks(request):
+
+    all_tasks = Task.objects.all()
+
+    context_dict = {
+        "all_tasks" : all_tasks
+    }
+
+    return render(request,"users/all_tasks.html",context_dict)

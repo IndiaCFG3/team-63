@@ -26,5 +26,7 @@ urlpatterns = [
     path('login/', users_views.login_api.as_view(), name = 'login'),
     path('show_mobilizers_under_me', users_views.show_mobilizers_under_me, name = 'show_mobilizers_under_me'),
     path('create_task/', users_views.create_task.as_view(), name = 'create_task'),
-    path('create_task_manager/', users_views.create_task_manager, name = 'create_task_manager')
+    path('create_task_manager/', users_views.create_task_manager, name = 'create_task_manager'),
+    path('show_all_tasks/', users_views.show_all_tasks, name = 'show_all_tasks')
+
 ]
