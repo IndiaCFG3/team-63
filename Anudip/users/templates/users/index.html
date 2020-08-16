@@ -45,7 +45,7 @@
           <!-- <li><a class="navbar-brand mr-auto" href=""><img src="C:\Users\Sneha Reddy\Desktop\anudip.jpg" height="20" width="61"></a></li> -->
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="https://www.anudip.org/">Anudip Foundation</a></li>
-          <li><a href="signup.html" class="get-started-btn" id="topnav-right">Sign Up</a></li>
+          <li><a href="{% url 'signup' %}" class="get-started-btn" id="topnav-right">Sign Up</a></li>
           <li><a href="{% url 'login' %}" class="get-started-btn" id="topnav-right">Login</a></li>
         </ul>
       </nav><!-- .nav-menu -->
@@ -59,7 +59,7 @@
       <h1>Act Today,<br>To create a better Tomorrow</h1>
       <h2>Come Join Us</h2>
       <br>
-      <a href={} class="get-started-btn">Sign Up</a>
+      <a href="{% url 'signup' %}" class="get-started-btn" >Sign Up</a>
     </div>
   </section><!-- End Hero -->
 
