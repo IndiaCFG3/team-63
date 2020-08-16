@@ -1,6 +1,6 @@
 {% load crispy_forms_tags %}
 {% load static %}
-{% load templates%}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,11 +97,14 @@ body {
 </head>
 <body>
 <div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    
+        
 		<h2>Sign Up</h2>
 		<p>Please fill in this form to create an account!</p>
-		<hr>
+        <hr>
+        <form action="{% url 'signup' %}" method="post" name="signup"></form>
         <div class="form-group">
+            
 			<div class="row">
 				<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
 				<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
@@ -121,7 +124,7 @@ body {
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
     </form>
-    <div class="hint-text">Already have an account? <a href="{%'users/login.html'%}">Login here</a></div>
+    <div class="hint-text">Already have an account? <a href="{% url 'login' %}" class="get-started-btn" id="topnav-right">Login</a></div>
 </div>
 </body>
 </html>
