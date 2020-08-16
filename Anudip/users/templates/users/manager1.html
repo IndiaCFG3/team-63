@@ -52,6 +52,7 @@
     </div>
   </header>
   <br>
+
     <div class="container">
     <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
         
@@ -63,35 +64,50 @@
     <br><br><br>          
     <h1 style="margin-left: 15%">Add Task Details</h1>
             <br>
+
+ {% for message in messages %}
+
+                  <div class="alert alert-success">
+                      <a class="close" href="#" data-dismiss="alert">×</a>
+
+                      {{ message }}
+
+                  </div>
+          {% endfor %}
+
+
+
     <div class="container">
     <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
-        <form action="{% url 'patienta' %}" method="POST">   
-            
-            <div class="form-group">
-                <label for="Name">Task ID</label>
-                <input type="text" class="form-control form-rounded" id="Name" placeholder="Name" name="Name">
-            </div>
-            
+        <form action="{% url 'create_task' %}" method="POST">   
+              {% csrf_token %}
+
             <div class="form-group">
                 <label for="Hospital">Task Name</label>
-                <input type="text" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
+                <input type="text" class="form-control form-rounded" id="Hospital" placeholder="Task name" name="taskname" required>
             </div>
 
             <div class="form-group">
                 <label for="Phone number">Task Description</label>
-                <input type="text" class="form-control form-rounded" id="Phone number" placeholder="Phone number" name="Phone">
+                <input type="text" class="form-control form-rounded" id="Phone number" placeholder="Description" name="description" required>
             </div>
 
             <div class="form-group">
                 <label for="Hospital">From Date</label>
-                <input type="date" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
+                <input type="date" class="form-control form-rounded" id="Hospital" placeholder="Start Date" name="fromduration" required>
             </div>
 
             <div class="form-group">
                 <label for="Hospital">To Date</label>
-                <input type="date" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
+                <input type="date" class="form-control form-rounded" id="Hospital" placeholder="End Date" name="toduration" required>
             </div>
-                     
+                
+            <div class="form-group">
+                <label for="Max No of Mobilizers">Max Mobilizers</label>
+                <input type="number" class="form-control form-rounded" id="Hospital" placeholder="Max No of Mobilizers" name="maxnumber" required>
+            </div>
+
+
             <button type="submit" id="submitForm">Add details</button>
           </form>
           </div>

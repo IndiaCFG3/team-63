@@ -1,5 +1,5 @@
 # https://github.com/IndiaCFG3/team-63
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import os
 import json
 from django.http import HttpResponse, JsonResponse
@@ -12,6 +12,7 @@ from django.utils.html import format_html
 from rest_framework.views import APIView
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from django.contrib import messages
 
 def register(request):
     if request.method == "POST":
@@ -98,8 +99,6 @@ def show_mobilizers_under_me(request):
 
     return render(request, "users/show_mobilizers_under_me.html", {"all_mobilizers" : all_mobilizers})
 
-
-
 class login_api(APIView):
 
     def post(self, request):
@@ -121,3 +120,33 @@ class login_api(APIView):
     def get(self, request):
 
         return render(request, "users/login.html")
+
+def create_task_manager(request):
+
+    return render(request, "users/manager1.html")
+
+class create_task(APIView):
+
+    def post(self, request):
+
+        taskcreator = request.user
+        taskname = request.data["taskname"]
+        description = request.data["description"]
+        fromduration = request.data["fromduration"]
+        toduration = request.data["toduration"]
+        maxnumber = request.data["maxnumber"]
+
+        new_task = Task(
+            taskcreator = taskcreator,
+            taskname = taskname,
+            description = description,
+            fromduration = fromduration,
+            toduration = toduration,
+            maxnumber = maxnumber
+        )
+
+        new_task.save()
+
+        messages.success(request, "Task Added!")
+
+        return redirect("create_task_manager")
